@@ -1,8 +1,10 @@
-#lang racket
+#lang sicp
 
-(define (square x) (* x x))
+(define (sum-of-square x y) (+ (* x x) (* y y)))
 
-(define (sum-of-squares x y) (+ (square x) (square y)))
-(define (f a) 
-    (sum-of-squares (+ a 1) (* a 2)))
-(f 7)
+(define (sum-of-square-largest x y z)
+    (cond ((and (< x y) (< x z)) (sum-of-square y z))
+            ((and (< y x) (< y z)) (sum-of-square x z))
+            ((and (< z x) (< z y)) (sum-of-square x y))))
+
+(sum-of-square-largest 1 2 3)

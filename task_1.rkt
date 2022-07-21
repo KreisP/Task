@@ -1,4 +1,4 @@
-#lang racket
+#lang sicp
 
 ;Упражнение 1.1
 
@@ -39,4 +39,14 @@
 ;Упражнение 1.2
 
 (/ (+ 5 4 (- 2 (- 3 (+ 6 (/ 4 5))))) (* 3 (- 6 2) (- 2 7)))
+
+;Упражнение 1.3
+(define (sum-of-square x y) (+ (* x x) (* y y)))
+
+(define (sum-of-square-largest x y z)
+    (cond ((and (< x y) (< x z)) (sum-of-square y z))
+            ((and (< y x) (< y z)) (sum-of-square x z))
+            ((and (< z x) (< z y)) (sum-of-square x y))))
+
+(sum-of-square-largest 1 2 3)
 
