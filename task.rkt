@@ -1,10 +1,9 @@
 #lang sicp
 
-(define (sum-of-square x y) (+ (* x x) (* y y)))
+(define (p) (p))
 
-(define (sum-of-square-largest x y z)
-    (cond ((and (< x y) (< x z)) (sum-of-square y z))
-            ((and (< y x) (< y z)) (sum-of-square x z))
-            ((and (< z x) (< z y)) (sum-of-square x y))))
+(define (test x y)
+    (if (= x 0)
+        0
+        y))
 
-(sum-of-square-largest 1 2 3)
